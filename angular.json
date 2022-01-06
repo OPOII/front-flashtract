@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "front-flashtract": {
+    "angular-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/front-flashtract",
+            "outputPath": "dist/angular-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,9 +31,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -68,18 +73,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "front-flashtract:build"
+            "browserTarget": "angular-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "front-flashtract:build:production"
+              "browserTarget": "angular-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "front-flashtract:build"
+            "browserTarget": "angular-demo:build"
           }
         },
         "test": {
@@ -116,16 +121,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "front-flashtract:serve"
+            "devServerTarget": "angular-demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "front-flashtract:serve:production"
+              "devServerTarget": "angular-demo:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "front-flashtract"
+  "defaultProject": "angular-demo"
 }
