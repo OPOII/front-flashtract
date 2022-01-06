@@ -1,55 +1,18 @@
 <div class="formularioRegistro">
-  <h2>Input de la cadena</h2>
-  <form [formGroup]="cadenaForm" (ngSubmit)="guardar()">
-    <div class="form-group">
-      <label>Cadena</label>
-      <input type="text" formControlName="input" class="form-control">
-    </div>
-    <div class="form-group">
-      <label>Número de veces a repetir</label>
-      <input type="number" formControlName="repeats" class="form-control">
-    </div>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
     
-
-
-    <button type="submit" class="btn btn-primary" [disabled]="cadenaForm.invalid">Guardar</button>
-
-  </form>
-</div>
-
-<div class="formularioRegistro">
-<h2>Resultado Cadena</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Cadena Original</th>
-        <th>Cadena nueva</th>
-        <th>Numero de repeticiones</th>
-        <th>ID</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of cadenas">
-        
-        <td>{{item.input}}</td>
-        <td>{{item.output}}</td>
-        <td>{{item.repeats}}</td>
-        <th>{{item.id}}</th>
-        <td>
-          <button type="button" class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-
-
-
-
-
-
-
-
+      <!-- Tabs Titles -->
+      <h3>Login</h3>
+  
+      <!-- Login Form -->
+      <form>
+        <input type="text" id="username" class="fadeIn second"  placeholder="username">
+        <input type="password" id="password" class="fadeIn third"  placeholder="password">
+        <input type="submit"  class="fadeIn fourth" value="Log In">
+      </form>
+  
+    </div>
+  </div>
 
 <router-outlet></router-outlet>
